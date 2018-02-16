@@ -1,0 +1,22 @@
+
+// Set image location.
+$breadcrumb-divider: "▶" !default;
+$breadcrumb-divider-rtl: "◀" !default;
+
+// Import font awesome.
+@import "fontawesome/moodle-path";
+@import "fontawesome/font-awesome";
+
+// Go ahead, try a bootswatch
+// @import "bootswatch/dist/sketchy/variables";
+
+// Import the bootstrap variables.
+@import "variables.scss";
+@import "bootstrap/bootstrap";
+
+// Try a bootswatch
+// @import "bootswatch/dist/sketchy/bootswatch";
+
+// Prepare variables for Moodle use
+@import "bs4alphacompat";
+@import "moodle.scss";

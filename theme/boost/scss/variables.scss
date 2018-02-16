@@ -1,0 +1,9 @@
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+// These variable are overridden. Please use this file only for variables existing in
+// boostrap/_variables.scss
+
+$font-size-base:              0.875rem !default; // Assumes the browser default, typically `16px`

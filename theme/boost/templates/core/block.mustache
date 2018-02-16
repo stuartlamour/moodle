@@ -20,7 +20,7 @@
 
 {{! Start Block Container }}
 <aside id="{{id}}"
-     class="{{#hidden}}hidden{{/hidden}} block block_{{type}} {{#hascontrols}}block_with_controls{{/hascontrols}} card m-b-1"
+     class="{{#hidden}}hidden{{/hidden}} block block_{{type}} {{#hascontrols}}block_with_controls{{/hascontrols}} card mb-3"
      role="{{ariarole}}"
      data-block="{{type}}"
      {{#arialabel}}
@@ -33,7 +33,7 @@
      {{/arialabel}}>
 
     {{! Block contents }}
-    <div class="card-block">
+    <div class="card-body">
 
         {{#hascontrols}}
             <div class="block-controls pull-xs-right header">

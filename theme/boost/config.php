@@ -27,12 +27,18 @@ defined('MOODLE_INTERNAL') || die();
 require_once(__DIR__ . '/lib.php');
 
 $THEME->name = 'boost';
-$THEME->sheets = [];
+$THEME->sheets = ['boost'];
 $THEME->editor_sheets = [];
 $THEME->usefallback = true;
-$THEME->scss = function($theme) {
-    return theme_boost_get_main_scss_content($theme);
-};
+// $THEME->scss = function($theme) {
+
+//     // Edit for Bootstrap 4: The core sabberworm php sass compiler is not
+//     // compatible with some of the newer Sass syntax. Disabling compiling
+//     // Sass throuh PHP for now and change to compiling with Grunt.
+//     // This has to be fixed!!
+//     // return theme_boost_get_main_scss_content($theme);
+//     return '';
+// };
 
 $THEME->layouts = [
     // Most backwards compatible layout without the blocks - this is the layout used by default.
@@ -147,9 +153,9 @@ $THEME->layouts = [
 
 $THEME->parents = [];
 $THEME->enable_dock = false;
-$THEME->csstreepostprocessor = 'theme_boost_css_tree_post_processor';
-$THEME->extrascsscallback = 'theme_boost_get_extra_scss';
-$THEME->prescsscallback = 'theme_boost_get_pre_scss';
+// $THEME->csstreepostprocessor = 'theme_boost_css_tree_post_processor';
+// $THEME->extrascsscallback = 'theme_boost_get_extra_scss';
+// $THEME->prescsscallback = 'theme_boost_get_pre_scss';
 $THEME->yuicssmodules = array();
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 $THEME->requiredblocks = '';

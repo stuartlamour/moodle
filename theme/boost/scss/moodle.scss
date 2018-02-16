@@ -1,14 +1,3 @@
-// Set image location.
-$breadcrumb-divider: "▶" !default;
-$breadcrumb-divider-rtl: "◀" !default;
-
-// Import font awesome.
-@import "fontawesome/moodle-path";
-@import "fontawesome/font-awesome";
-
-// Import the bootstrap variables.
-@import "bootstrap/bootstrap";
-
 // Specific overrides to make Bootstrap RTL.
 @import "moodle/bootstrap-rtl";
 
