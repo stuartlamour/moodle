@@ -10,15 +10,14 @@ $breadcrumb-divider-rtl: "◀" !default;
 // Go ahead, try a bootswatch
 // @import "bootswatch/dist/sketchy/variables";
 
-// Import the Moodle presets, should be made configurable
-@import "preset/default";
+@import "preset/default/variables";
 
 // Import the bootstrap variables.
-@import "variables.scss";
 @import "bootstrap/bootstrap";
 
 // Try a bootswatch
 // @import "bootswatch/dist/sketchy/bootswatch";
+@import "preset/default/bootswatch";
 
 // Prepare variables for Moodle use
 @import "bs4alphacompat";

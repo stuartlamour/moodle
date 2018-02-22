@@ -726,4 +726,86 @@ class core_renderer extends \core_renderer {
     public function secure_login_info() {
         return $this->login_info(false);
     }
+
+    /**
+     * Internal implementation of file picker rendering.
+     *
+     * @param file_picker $fp
+     * @return string
+     */
+    public function render_file_picker(\file_picker $fp) {
+        global $CFG, $OUTPUT, $USER;
+        $options = $fp->options;
+        $client_id = $options->client_id;
+        $strsaved = get_string('filesaved', 'repository');
+        $straddfile = get_string('openpicker', 'repository');
+        $strloading  = get_string('loading', 'repository');
+        $strdndenabled = get_string('dndenabled_inbox', 'moodle');
+        $strdroptoupload = get_string('droptoupload', 'moodle');
+        $icon_progress = $OUTPUT->pix_icon('i/loading_small', $strloading).'';
+
+        $currentfile = $options->currentfile;
+        if (empty($currentfile)) {
+            $currentfile = '';
+        } else {
+            $currentfile .= ' - ';
+        }
+        if ($options->maxbytes) {
+            $size = $options->maxbytes;
+        } else {
+            $size = get_max_upload_file_size();
+        }
+        if ($size == -1) {
+            $maxsize = '';
+        } else {
+            $maxsize = get_string('maxfilesize', 'moodle', display_size($size));
+        }
+        if ($options->buttonname) {
+            $buttonname = ' name="' . $options->buttonname . '"';
+        } else {
+            $buttonname = '';
+        }
+        $html = <<<EOD
+<div class="filemanager-loading mdl-align" id='filepicker-loading-{$client_id}'>
+$icon_progress
+</div>
+<div id="filepicker-wrapper-{$client_id}" class="mdl-left w-100" style="display:none">
+    <div>
+        <input type="button" class="btn btn-secondary fp-btn-choose" id="filepicker-button-{$client_id}" value="{$straddfile}"{$buttonname}/>
+        <span> $maxsize </span>
+    </div>
+EOD;
+        if ($options->env != 'url') {
+            $html .= <<<EOD
+    <div id="file_info_{$client_id}" class="mdl-left filepicker-filelist" style="position: relative">
+    <div class="filepicker-filename">
+        <div class="filepicker-container">$currentfile<div class="dndupload-message">$strdndenabled <br/><div class="dndupload-arrow"></div></div></div>
+        <div class="dndupload-progressbars"></div>
+    </div>
+    <div><div class="dndupload-target">{$strdroptoupload}<br/><div class="dndupload-arrow"></div></div></div>
+    </div>
+EOD;
+        }
+        $html .= '</div>';
+        return $html;
+
+        // $filepicker = new stdClass();
+        // $options = $fp->options;
+        // $filepicker->clientid = $options->client_id;
+        // $filepicker->envurl = $options->env ? false : true;
+        // $filepicker->currentfile = $options->currentfile ? $options->currentfile : '-';
+        // if ($options->maxbytes) {
+        //     $size = $options->maxbytes;
+        // } else {
+        //     $size = get_max_upload_file_size();
+        // }
+        // if ($size == -1) {
+        //      $filepicker->maxsize = '';
+        // } else {
+        //      $filepicker->maxsize = get_string('maxfilesize', 'moodle', display_size($size));
+        // }
+
+    
+        // return $this->render_from_template('theme_boost/filepicker', $filepicker);
+    }
 }
