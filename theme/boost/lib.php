@@ -90,6 +90,9 @@ function theme_boost_pluginfile($course, $cm, $context, $filearea, $args, $force
 function theme_boost_get_main_scss_content($theme) {
     global $CFG;
 
+    // TEMPORARY FOR DEV ONLY
+    return file_get_contents($CFG->dirroot . '/theme/boost/scss/boost.scss');
+
     $scss = '';
     $filename = !empty($theme->settings->preset) ? $theme->settings->preset : null;
     $fs = get_file_storage();

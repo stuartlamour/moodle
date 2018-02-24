@@ -12,13 +12,13 @@ $breadcrumb-divider-rtl: "◀" !default;
 
 @import "preset/default/variables";
 
-// Import the bootstrap variables.
+// Import Bootstrap.
 @import "bootstrap/bootstrap";
 
-// Try a bootswatch
-// @import "bootswatch/dist/sketchy/bootswatch";
+// // Try a bootswatch
+// // @import "bootswatch/dist/sketchy/bootswatch";
 @import "preset/default/bootswatch";
 
-// Prepare variables for Moodle use
+// // Prepare variables for Moodle use
 @import "bs4alphacompat";
 @import "moodle.scss";

@@ -1070,7 +1070,7 @@ span.editinstructions {
         .yui3-button {
             // Edit for Bootstrap 4 Stable. Use button-variant mixin.
             // background-color: $btn-info-bg;
-            @include button-variant($info, $info)
+            @include button-variant($info, $info);
             border: 0;
             margin: 0.4rem 0.2rem 0.45rem;
             font-size: 10.4px;

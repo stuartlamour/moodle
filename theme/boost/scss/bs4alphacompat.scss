@@ -65,7 +65,9 @@ $state-warning-border:             theme-color-level("warning", -10)!default;
 $state-danger-text:                $danger;
 $state-danger-bg:                  theme-color-level("danger", -10)!default;
 $state-danger-border:              theme-color-level("danger", -9)!default;
-
+.form-control-feedback {
+  
+}
 @mixin form-control-validation($color) {
   // Color the label and help text
   .form-control-feedback,

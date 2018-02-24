@@ -44,21 +44,21 @@
 /**
  * Styling the dropdown menus.
  */
-.dropdown-menu {
-    font-size: 14px;
-    border-radius: 0;
-    .dropdown-item {
-        padding-top: 8px;
-        padding-bottom: 8px;
-        border-bottom: $border-width solid $dropdown-border-color;
-        &:last-child {
-            border-bottom: 0;
-        }
-    }
-    .dropdown-divider {
-        display: none;
-    }
-}
+// .dropdown-menu {
+//     font-size: 14px;
+//     border-radius: 0;
+//     .dropdown-item {
+//         padding-top: 8px;
+//         padding-bottom: 8px;
+//         border-bottom: $border-width solid $dropdown-border-color;
+//         &:last-child {
+//             border-bottom: 0;
+//         }
+//     }
+//     .dropdown-divider {
+//         display: none;
+//     }
+// }
 
 /**
  * User picture.
